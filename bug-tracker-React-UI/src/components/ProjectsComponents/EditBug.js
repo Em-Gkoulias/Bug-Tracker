@@ -18,13 +18,13 @@ const EditBug = () => {
     e.preventDefault();
     axios.defaults.withCredentials = true;
     axios.defaults.baseURL = "http://localhost:8001";
-    console.log('ok');
+    console.log("ok");
     axios
       .put(`/api/bugs/${bugId}`, {
         id: bug.id,
         project_id: bug.project_id,
         title: title,
-        description: description
+        description: description,
       })
       .then((response) => {
         console.log(response);
@@ -38,13 +38,12 @@ const EditBug = () => {
   useEffect(() => {
     axios.defaults.withCredentials = true;
     axios.defaults.baseURL = "http://localhost:8001";
-    axios.get(`/api/bugs/${bugId}`)
-      .then((response) => {
-        setBug(response.data);
-        setTitle(response.data.title);
-        setDescription(response.data.description);
-        setIsLoading(false);
-      });
+    axios.get(`/api/bugs/${bugId}`).then((response) => {
+      setBug(response.data);
+      setTitle(response.data.title);
+      setDescription(response.data.description);
+      setIsLoading(false);
+    });
   }, []);
 
   if (error) {
@@ -52,7 +51,6 @@ const EditBug = () => {
   } else if (isLoading) {
     return <div>Loading...</div>;
   } else {
-    // console.log(bug);
     return (
       <div className="CreateBug">
         <h1 className="createBugHeader">Edit bug</h1>

@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import { useHistory, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
-import Register from "./Register";
 
 const Login = () => {
-  const history = useHistory();
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   const handleClick = (e) => {

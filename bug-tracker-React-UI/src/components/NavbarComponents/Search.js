@@ -1,9 +1,7 @@
-import react from 'react';
+import React from "react";
 
 const Search = () => {
-    return <div className="Search borders">
-        Search
-    </div>
-}
+  return <div className="Search borders">Search</div>;
+};
 
 export default Search;

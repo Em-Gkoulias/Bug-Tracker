@@ -3,19 +3,14 @@ import ReactDOM from "react-dom";
 
 import axios from "axios";
 
-import Login from "./AuthComponents/Login";
-import Register from "./AuthComponents/Register";
 import Auth from "./Auth";
-
 import Sidebar from "./Sidebar";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-
 import Charts from "./AppComponents/Charts";
 import Projects from "./AppComponents/Projects";
 import Log from "./AppComponents/Log";
 import Team from "./AppComponents/Team";
-
 import Project from "./ProjectsComponents/Project";
 import CreateProject from "./ProjectsComponents/CreateProject";
 import EditProject from "./ProjectsComponents/EditProject";
@@ -37,10 +32,8 @@ function App() {
     axios
       .get("/api/user")
       .then((response) => {
-        // console.log(response.data);
         setUser(response.data);
         setIsLoading(false);
-        // window.location.
       })
       .catch((error) => {
         console.log(error);
@@ -50,20 +43,13 @@ function App() {
   }, []);
 
   if (error) {
-    return (
-      // <Router>
-      //   <Route path="/*" exact component={Auth} />
-      //   {/* <Route path="/register" exact component={Register} /> */}
-      // </Router>
-      <Auth />
-    );
+    return <Auth />;
   } else if (isLoading) {
     return <div className="lds-dual-ring"></div>;
   } else {
     return (
       <Router>
         <div className="App">
-          {/* <h1>HELLO {user.name}</h1> */}
           <Sidebar />
           <Navbar user={user} />
           <Switch>

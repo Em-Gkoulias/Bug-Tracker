@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 
-const User = ({user}) => {
+const User = ({ user }) => {
   const handleClick = (e) => {
     e.preventDefault();
 
@@ -12,12 +12,11 @@ const User = ({user}) => {
       window.location.reload();
       console.log(response);
     });
-    
   };
 
   return (
     <div className="User">
-      <h4 style={{ marginTop: '0' }}>Welcome {user.name}</h4>
+      <h4 style={{ marginTop: "0" }}>Welcome {user.name}</h4>
       <button onClick={handleClick}>Logout</button>
     </div>
   );
