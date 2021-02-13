@@ -48,8 +48,8 @@ const Project = () => {
                         return (
                             <li className="bug">
                                 <div className="bugsProperties">
-                                    <h4>{bug.title}</h4>
-                                    <div>{bug.description}</div>
+                                    <h4>Title: {bug.title}</h4>
+                                    <div>Description: {bug.description}</div>
                                 </div>
                                 <div className="bugsCrud">
                                     <Remove bug={bug} />
@@ -60,7 +60,6 @@ const Project = () => {
                                             edit
                                         </Link>
                                     </div>
-                                    <button>status</button>
                                 </div>
                             </li>
                         );

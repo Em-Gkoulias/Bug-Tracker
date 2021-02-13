@@ -236,15 +236,14 @@ textarea:focus {
 
     .project {
         display: flex;
+        flex-direction: column;
         margin: 1rem 2.5rem;
-        box-shadow: 10px 10px $lighterBlue;
         transition: box-shadow, transform, 0.2s;
         
         .projectProperties {
             background-color: $lighterBlue;
             border: 5px solid $lighterBlue;
             color: $lighterBlue;
-            width: 75%;
 
             p {
                 background-color: $shadowOfLight;
@@ -287,11 +286,11 @@ textarea:focus {
         }
         
         .projectCRUD {
-            background-color: $testColor;
-            display: flex;
-            justify-content: space-evenly;
             align-items: center;
-            width: 25%;
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 5px;
+            padding-top: 0.3rem;
 
             button {
                 font-family: inherit;
@@ -311,11 +310,10 @@ textarea:focus {
             }
 
             .confirmButtonsBg {
-                background-color: $testColor;
                 text-align: center;
 
                 p {
-                    background-color: $testColor;
+                    color: $shadowOfLight;
                 }
 
                 .confirmButtons {
@@ -402,16 +400,16 @@ textarea:focus {
 
         .bug {
             background-color: $shadowOfLight;
-            box-shadow: 10px 10px $lighterBlue;
             color: $darkBlue;
             display: flex;
-            margin-bottom: 1rem;
+            flex-direction: column;
+            margin: 0 1rem 1rem 1rem;
+            transition: transform 0.1s;
 
             .bugsProperties {
                 background-color: $lighterBlue;
                 border: 5px solid $lighterBlue;
                 color: $darkBlue;
-                width: 75%;
 
                 h4 {
                     background-color: $lighterBlue;
@@ -421,7 +419,6 @@ textarea:focus {
 
                 div {
                     background-color: $shadowOfLight;
-                    // border: 5px solid $lighterBlue;
                     color: $darkBlue;
                     font-weight: 600;
                     padding: 0.5rem;
@@ -429,12 +426,13 @@ textarea:focus {
             }
 
             .bugsCrud {
-                background-color: $testColor;
+                background-color: $darkBlue;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-around;
+                justify-content: flex-end;
                 align-items: center;
-                width: 25%;
+                padding-bottom: 5px;
+                padding-top: 0.3rem;
 
                 .removeButton {
                     background-color: $orange !important;
@@ -458,11 +456,12 @@ textarea:focus {
                 }
 
                 .confirmButtonsBg {
-                    background-color: $testColor;
+                    background-color: $darkBlue;
                     text-align: center;
 
                     p {
-                        background-color: $testColor;
+                        background-color: $darkBlue;
+                        color: $shadowOfLight;
                     }
 
                     .confirmButtons {
@@ -496,6 +495,10 @@ textarea:focus {
                     transform: scale(0.95);
                 }
             }
+        }
+
+        .bug:hover {
+            transform: translateX(10px) translateY(10px);
         }
     }
 }
@@ -576,7 +579,7 @@ textarea:focus {
         }
 
         .projectCRUD {
-            background-color: $lighterBlue !important;
+            justify-content: center !important;
             width: 100% !important;
         }
     }
@@ -590,7 +593,8 @@ textarea:focus {
         }
 
         .bugsCrud {
-            background-color: $lighterBlue !important;
+            // background-color: $lighterBlue !important;
+            justify-content: center !important;
             width: 100% !important;
 
             button {

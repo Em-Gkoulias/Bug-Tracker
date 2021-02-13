@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Auth\VerificationController;
 use App\Http\Controllers\BugController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProjectController;
