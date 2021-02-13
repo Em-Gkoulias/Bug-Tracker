@@ -196,6 +196,10 @@ textarea:focus {
 
 // my Projects.js component
 .Projects {
+    border: 3px solid $shadowOfLight;
+    margin: 0 1rem 1rem 1rem;
+    padding: 1.5rem;
+    overflow-y: scroll;
 
     h1 {
         margin: 1rem 2rem;
@@ -593,7 +597,6 @@ textarea:focus {
         }
 
         .bugsCrud {
-            // background-color: $lighterBlue !important;
             justify-content: center !important;
             width: 100% !important;
 
