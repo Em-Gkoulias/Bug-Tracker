@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
-Route::middleware('auth')->get('/{path?}', function () {
+Route::middleware('verified')->get('/{path?}', function () {
     return view('index');
 })->where('path', '.*');
